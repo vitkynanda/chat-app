@@ -1,7 +1,6 @@
 import Head from "next/head";
 import styled from "styled-components";
 import { auth, provider } from "../firebase";
-// import Image from "next/image";
 
 function Login() {
   const signIn = () => {
@@ -14,15 +13,10 @@ function Login() {
         <title>Login</title>
       </Head>
       <LoginContainer>
-        {/* <Logo
-          src={images}
-          alt="whatsapp-logo"
-          width={30}
-          height={30}
-        /> */}
+        <Logo src="/whatsapp.png" alt="whatsapp-logo" />
         <Title>LOGIN TO WHATSAPP</Title>
         <ButtonLogin onClick={signIn}>
-          {/* <ImageButton src="/google.png" alt="Google" width={30} height={30} /> */}
+          <ImageButton src="/google.png" alt="Google" />
           <p>LOGIN WITH GOOGLE</p>
         </ButtonLogin>
       </LoginContainer>
@@ -49,11 +43,11 @@ const LoginContainer = styled.div`
     width: 300px;
   }
 `;
-// const Logo = styled(Image)`
-//   height: 150px;
-//   width: 100px;
-//   margin: auto;
-// `;
+const Logo = styled.img`
+  height: 100px;
+  width: 100px;
+  margin: auto;
+`;
 const ButtonLogin = styled.div`
   padding: 0 20px;
   border-radius: 5px;
@@ -73,7 +67,10 @@ const ButtonLogin = styled.div`
   }
 `;
 
-// const ImageButton = styled(Image)``;
+const ImageButton = styled.img`
+  height: 30px;
+  width: 30px;
+`;
 const Title = styled.h3`
   color: white;
   letter-spacing: 1.2px;

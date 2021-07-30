@@ -85,6 +85,7 @@ function ChatScreen({ messages, recipient }) {
     setInput("");
     scrollToBottom();
   };
+
   return (
     <Container>
       <Header>
@@ -133,11 +134,9 @@ function ChatScreen({ messages, recipient }) {
 
 export default ChatScreen;
 
-const Container = styled.div`
-  height: 100vh;
-`;
+const Container = styled.div``;
 
-const InputContainer = styled.div`
+const InputContainer = styled.form`
   display: flex;
   align-items: center;
   padding: 10px;
@@ -156,8 +155,6 @@ const Input = styled.input`
   border-radius: 10px;
   z-index: 100;
   padding: 10px;
-  position: sticky;
-  bottom: 0;
   background-color: whitesmoke;
   margin: 0 15px;
 `;
@@ -191,12 +188,19 @@ const HeaderInformation = styled.div`
 const HeaderIcon = styled.div``;
 
 const MessageContainer = styled.div`
-  padding: 10px;
-  background-color: #e5ded8;
   height: 90vh;
+  padding: 30px;
+  overflow-y: scroll;
+  background-color: #faf3f3;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
-const EndOfMessage = styled.div`
+const EndOfMessage = styled.p`
   margin-bottom: 50px;
 `;
 
