@@ -8,14 +8,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { auth, db } from "../firebase";
 import Chat from "./Chat";
-import router from "next/router";
 
 export default function Sidebar() {
   const [user] = useAuthState(auth);
 
   const userChatRef = db
     .collection("chats")
-    .where("users", "array-contains", user.email);
+    .where("users", "array-contains", user?.email);
 
   const [chatsSnapshot] = useCollection(userChatRef);
 
@@ -32,7 +31,7 @@ export default function Sidebar() {
       input !== user.email
     ) {
       console.log("email valiadated");
-      db.collection("chats").add({ users: [user.email, input] });
+      db.collection("chats").add({ users: [user?.email, input] });
     } else {
       console.log("email not valid");
     }

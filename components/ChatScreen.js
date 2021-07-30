@@ -193,6 +193,7 @@ const HeaderIcon = styled.div``;
 const MessageContainer = styled.div`
   padding: 10px;
   background-color: #e5ded8;
+  height: 90vh;
 `;
 
 const EndOfMessage = styled.div`

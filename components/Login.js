@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styled from "styled-components";
 import { auth, provider } from "../firebase";
+// import Image from "next/image";
 
 function Login() {
   const signIn = () => {
@@ -13,13 +14,15 @@ function Login() {
         <title>Login</title>
       </Head>
       <LoginContainer>
-        <Logo
-          src="https://seeklogo.com/images/W/whatsapp-logo-8AE44BBBB0-seeklogo.com.png"
+        {/* <Logo
+          src={images}
           alt="whatsapp-logo"
-        />
+          width={30}
+          height={30}
+        /> */}
         <Title>LOGIN TO WHATSAPP</Title>
         <ButtonLogin onClick={signIn}>
-          <ImageButton src="/google.png" alt="Google" />
+          {/* <ImageButton src="/google.png" alt="Google" width={30} height={30} /> */}
           <p>LOGIN WITH GOOGLE</p>
         </ButtonLogin>
       </LoginContainer>
@@ -46,11 +49,11 @@ const LoginContainer = styled.div`
     width: 300px;
   }
 `;
-const Logo = styled.img`
-  height: 150px;
-  width: px;
-  margin: auto;
-`;
+// const Logo = styled(Image)`
+//   height: 150px;
+//   width: 100px;
+//   margin: auto;
+// `;
 const ButtonLogin = styled.div`
   padding: 0 20px;
   border-radius: 5px;
@@ -70,10 +73,7 @@ const ButtonLogin = styled.div`
   }
 `;
 
-const ImageButton = styled.img`
-  width: 30px;
-  height: 30px;
-`;
+// const ImageButton = styled(Image)``;
 const Title = styled.h3`
   color: white;
   letter-spacing: 1.2px;
